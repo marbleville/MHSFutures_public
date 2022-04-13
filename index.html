@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MHS Futures</title>
+    <link rel="icon" href="assets/MHSFutures_icon.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="docs/images/favicon.ico"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
+    ></script>
+  </head>
+  <body>
+    <div
+      id="map"
+      style="
+        width: 3000px;
+        height: 1440;
+        max-width: 100%;
+        max-height: 100%;
+        z-index: 10;
+      "
+    ></div>
+    <script src="js/map.js"></script>
+    <div style="position: fixed; left: 0px; bottom: 0px; z-index: 20">
+      <div class="info">
+        <a href="#clicked=true" style="text-decoration: none; color: black"
+          ><p style="margin: 10px 0; font-weight: bold" id="form_add_button">
+            Want to add yourself? Click here.
+          </p></a
+        >
+        <form
+          name="add-info"
+          method="POST"
+          data-netlify="true"
+          id="form_add_info"
+          style="display: none"
+        >
+          <input type="text" name="name" placeholder="full name" required />
+          <input
+            type="text"
+            name="college"
+            placeholder="college (or other plans)"
+            required
+          />
+          <input type="text" name="major" placeholder="major (not required)" />
+          <button type="submit">Send</button>
+        </form>
+        <script src="js/addForm.js"></script>
+      </div>
+      <div class="info">
+        <a href="#clicked=true" style="text-decoration: none; color: black"
+          ><p
+            style="margin: 10px 0; font-weight: bold"
+            id="add_information_button"
+          >
+            Click here for additional information.
+          </p></a
+        >
+        <p id="info" style="display: none">Info:</p>
+      </div>
+      <script src="js/info.js"></script>
+    </div>
+    <div
+      id="info_right"
+      class="info"
+      style="
+        margin-right: 10px;
+        position: fixed;
+        right: 0px;
+        bottom: 10px;
+        z-index: 20;
+      "
+    >
+      <a href="#clicked=true" style="text-decoration: none; color: red"
+        ><p style="margin: 10px 0; font-weight: bold" id="form_report_button">
+          Click here to report a mistake.
+        </p></a
+      >
+      <form
+        name="report-mistake"
+        method="POST"
+        data-netlify="true"
+        id="report_mistake_info"
+        style="display: none"
+      >
+        <textarea
+          name="mistake"
+          placeholder="What is the mistake? What is the correct information?"
+          style="width: 100%; height: 200px; resize: vertical"
+          required
+        ></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <script src="js/errorForm.js"></script>
+    </div>
+    <script src="js/getInfo.js"></script>
+  </body>
+</html>
