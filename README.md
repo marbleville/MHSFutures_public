@@ -1,7 +1,7 @@
 # MHSFutures_public
 Public version of MHS Futures site source with some data removed. 
 
-[http](https://www.mhsfutures.com/)
+[MHSFutures](https://www.mhsfutures.com/)
 
 This site plots where each of my highschool classamtes have gone after their senior year using the Leaflet mapping libray. 
 We support JQuery-based searching with both name and school filtering. 
